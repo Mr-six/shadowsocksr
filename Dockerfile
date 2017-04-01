@@ -12,6 +12,13 @@ ENV DNS_ADDR_2  8.8.4.4
 
 COPY . ~/shadowsocks
 
+RUN apk update \
+    && apk add python \
+    libsodium \
+    unzip \
+    wget \
+  && rm -rf /var/cache/apk/*
+
 WORKDIR ~/shadowsocks
 
 
